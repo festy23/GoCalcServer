@@ -47,9 +47,11 @@ Content-Type: application/json
 ```
 ### Сценарии запросов
 ### 1.Успешный запрос
+(здесь вместо localhost указывайте свой реальный host,
+по умолчанию будет localhost:8080)
 Для успешного выполнения арифметического выражения отправьте POST-запрос с выражением:
 ```
-curl --location 'localhost/api/v1/calculate' \
+curl --location 'localhost:8080/api/v1/calculate' \
 --header 'Content-Type: application/json' \
 --data '{
   "expression": "2+2*2"
@@ -64,8 +66,7 @@ curl --location 'localhost/api/v1/calculate' \
 Статус код: ```200 OK```
 ### 2. Ошибка 422: Неверное выражение
 Если выражение некорректное, например, содержит недопустимые символы, сервер вернет ошибку 422.
-(здесь вместо localhost указывайте свой реальный host,
-по умолчанию будет localhost:8080)
+
 ```
 curl --location 'localhost/api/v1/calculate' \
 --header 'Content-Type: application/json' \
