@@ -1,7 +1,8 @@
 package main
 
-import "github.com/festy23/rpn/internal/application"
+import "github.com/festy23/GoCalcServer/internal/application"
 
+// Запуск приложения
 func main() {
 	app := application.New()
 	app.Run()
