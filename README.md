@@ -41,12 +41,89 @@ Content-Type: application/json
   "expression": "2+2*2"
 }
 ```
-Пример ответа:
+### Сценарии запросов
+1.Успешный запрос
+Для успешного выполнения арифметического выражения отправьте POST-запрос с выражением:
+```
+curl --location 'localhost/api/v1/calculate' \
+--header 'Content-Type: application/json' \
+--data '{
+  "expression": "2+2*2"
+}'
+```
+Ожидаемый ответ:
 ```
 {
   "result": "6.00"
 }
 ```
+Статус код: ```200 OK```
+2. Ошибка 422: Неверное выражение
+Если выражение некорректное, например, содержит недопустимые символы, сервер вернет ошибку 422.
+```
+curl --location 'localhost/api/v1/calculate' \
+--header 'Content-Type: application/json' \
+--data '{
+  "expression": "2+2a"
+}'
+```
+Ожидаемый ответ:
+
+{
+  "error": "Expression is not valid"
+}
+Статус код: ```422```
+
+3. Ошибка 422: Пустое выражение
+Если выражение пустое, сервер также вернет ошибку 422.
+```
+curl --location 'localhost/api/v1/calculate' \
+--header 'Content-Type: application/json' \
+--data '{
+  "expression": ""
+}'
+```
+Ожидаемый ответ:
+```
+{
+  "error": "Expression is not valid"
+}
+```
+Статус код: ```422```
+
+4. Ошибка 500: Внутренняя ошибка сервера
+Если сервер сталкивается с внутренней ошибкой, например, проблемой при обработке запроса, он вернет ошибку 500.
+```
+curl --location 'localhost/api/v1/calculate' \
+--header 'Content-Type: application/json' \
+--data '{
+  "expression": "100/(2-2)"
+}'
+```
+Ожидаемый ответ:
+```
+{
+  "error": "Internal server error"
+}
+```
+Статус код: ```500```
+
+5. Ошибка 422: Некорректный формат числа
+Если выражение содержит некорректный формат числа, например, лишнюю запятую, сервер вернет ошибку 422.
+```
+curl --location 'localhost/api/v1/calculate' \
+--header 'Content-Type: application/json' \
+--data '{
+  "expression": "5.2.3+1"
+}'
+```
+Ожидаемый ответ:
+```
+{
+  "error": "Expression is not valid"
+}
+```
+Статус код: ```422```
 
 ### Тестирование
 
