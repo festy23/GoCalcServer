@@ -9,8 +9,8 @@ import (
 // Calc - функция, которая вычисляет результат выражения expression, делает проверку его корректности
 func Calc(expression string) (float64, error) {
 
-	if !isValidExpression(expression) {
-		return 0.0, errors.New("некорректное выражение")
+	if !IsValidExpression(expression) {
+		return 0.0, errors.New("invalid expression")
 	}
 
 	res, err := calculateExpression(expression)
@@ -18,7 +18,7 @@ func Calc(expression string) (float64, error) {
 }
 
 // IsValidExpression Проверка корректности поданного на вход выражения
-func isValidExpression(expression string) bool {
+func IsValidExpression(expression string) bool {
 	cntBraces := 0           // Проверка корректности скобок
 	prevCharIsDigit := false // Последний символ — число
 	inNumber := false        // Находимся ли внутри числа
