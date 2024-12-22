@@ -64,6 +64,8 @@ curl --location 'localhost/api/v1/calculate' \
 Статус код: ```200 OK```
 ### 2. Ошибка 422: Неверное выражение
 Если выражение некорректное, например, содержит недопустимые символы, сервер вернет ошибку 422.
+(здесь вместо localhost указывайте свой реальный host,
+по умолчанию будет localhost:8080)
 ```
 curl --location 'localhost/api/v1/calculate' \
 --header 'Content-Type: application/json' \
