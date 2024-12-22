@@ -3,7 +3,7 @@ package backend
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/festy23/rpn/pkg/rpn"
+	"github.com/festy23/GoCalcServer/pkg/rpn"
 	"io"
 	"net/http"
 	"reflect"

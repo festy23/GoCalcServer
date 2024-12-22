@@ -2,7 +2,7 @@ package rpn_test
 
 // Так как это другой пакет, нужно его импортировать
 import (
-	"github.com/festy23/rpn/pkg/rpn"
+	"github.com/festy23/GoCalcServer/pkg/rpn"
 	"testing"
 )
 

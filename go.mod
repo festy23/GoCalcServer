@@ -1,3 +1,3 @@
-module github.com/festy23/rpn
+module github.com/festy23/GoCalcServer
 
 go 1.23.3
