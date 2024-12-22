@@ -3,5 +3,5 @@ POST localhost:8080/api/v1/calculate
 Content-Type: application/json
 
 {
-  "expression": "100*(100+100)-100/100"
+  "expression": "100*(afds+100)-100/100"
 }
