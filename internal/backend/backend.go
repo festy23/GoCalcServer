@@ -10,7 +10,6 @@ import (
 	"sync"
 )
 
-var POSTRequestwWasCorrect = false
 var lastResult string
 var mu sync.Mutex
 
@@ -24,7 +23,7 @@ type Response struct {
 	Result string `json:"result"`
 }
 
-// Структура для ответа в случае ошибки
+// ErrorResponse Структура для ответа в случае ошибки
 type ErrorResponse struct {
 	Error string `json:"error"`
 }
