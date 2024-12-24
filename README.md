@@ -119,7 +119,7 @@ curl --location 'localhost:8080/api/v1/calculate' \
 ### 5. Ошибка 422: Некорректный формат числа
 Если выражение содержит некорректный формат числа, например, лишнюю запятую, сервер вернет ошибку 422.
 ```
-curl --location 'localhost/api/v1/calculate' \
+curl --location 'localhost:8080/api/v1/calculate' \
 --header 'Content-Type: application/json' \
 --data '{
   "expression": "5.2.3+1"
